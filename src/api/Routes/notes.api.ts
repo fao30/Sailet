@@ -6,7 +6,6 @@ export const getNotes = async () => {
 
 export const addNotes = async (body: TNotes) => {
   const value = await AsyncStorage.getItem("notes");
-  console.log(body, "<<<---body");
 
   if (body) {
     const parseValue = await JSON.parse(value);

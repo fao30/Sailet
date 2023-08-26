@@ -21,8 +21,6 @@ export const DetailScreen = ({ navigation, route }) => {
 
   const postData = async (body: TNotes) => {
     try {
-      console.log(body, "<<-- body");
-
       const response = await addNotes(body);
       if (response.length) {
         navigation.navigate("Main", {
