@@ -41,7 +41,7 @@ export const NotesList = ({ navigation }) => {
     }
   }, [route.params?.newNote]);
 
-  const Item = ({ id, title, text }) => {
+  const Item = React.useCallback(({ id, title, text }) => {
     const [isExpand, setIsexpand] = useState(false);
 
     return (
@@ -77,7 +77,9 @@ export const NotesList = ({ navigation }) => {
         )}
       </TouchableOpacity>
     );
-  };
+  },
+    [] // No dependencies since the component doesn't rely on external variables
+  );
 
   return (
     <SafeAreaView style={home.container}>
